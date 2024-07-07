@@ -51,20 +51,22 @@ Duygudaş, kullanıcıların ruh sağlığını ve genel iyilik halini geliştir
 # Sprint 1
 - **Sprint içi puan değerlendirmesi:** 50 Puan
 - **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk sprint'in 50 puan olması karalaştırldı ve 
-- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. > https://egeedutr-my.sharepoint.com/:w:/g/personal/45220000240_ogrenci_ege_edu_tr/EXPIsyvtuOpBq-R7sBHjB6gBKkV8Grrx9OU9RR1ovHjpgw?e=BhQ6G6 
+- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. > [WhatsApp](https://egeedutr-my.sharepoint.com/:w:/g/personal/45220000240_ogrenci_ege_edu_tr/EXPIsyvtuOpBq-R7sBHjB6gBKkV8Grrx9OU9RR1ovHjpgw?e=BhQ6G6)
 
 
 ## Sprint Board Screenshotları:
-
+<img width="901" alt="1" src="https://github.com/Raupeex/duygudas/assets/170167320/e50d8892-a734-41c1-9554-57328165a2dd">
+<img width="913" alt="2" src="https://github.com/Raupeex/duygudas/assets/170167320/9ce93902-9c10-4b1c-b221-a326d94a5a72">
 
 ## Ürün Durumu: Ekran görüntüleri: 
+![Giriş sayfası](https://github.com/Raupeex/duygudas/assets/170167320/92067f92-cd2c-4119-a220-654353a64be4)
+
 
 ## Sprint Review: 
-Kullanıcı arayüzü tasarlandı ve wireframe'ler oluşturuldu. 
-Proje yapısını ve bileşenlerin etkileşimlerini gösteren UML diyagramı hazırlandı. 
-Flutter projesi başlatılarak temel proje yapısı oluşturuldu.
-Proje için logo tasarımı yapıldı ve onaylandı. 
-Entegrasyon için gerekli hazırlıklar tamamlandı. 
+Bu sprintte, kullanıcı arayüzü tasarımı ve temel proje yapısı gibi önemli adımlar atarak sağlam bir temel oluşturuldu. UML diyagramı ve renk paleti gibi görsel araçlar da projeye netlik ve tutarlılık kazandırdı. Entegrasyon için yapılan ön hazırlıklar da ilerlemeyi hızlandıracaktır.
 #### Sprint Review katılımcıları: Fatma Zehra Düzenli, Gamze Gezgin, Hasan Hüseyin Gümüştepe, Gamze Berberoğlu
 
 ## Sprint Retrospective
+- Sprint boyunca bazı gecikmeler yaşandı. Planlama ve zaman yönetimi iyileştirilerek daha verimli geçmesi için kararlar alındı.
+- Roller ile ilgili düzenleme yapılmış, product owner değişmiştir.
+
