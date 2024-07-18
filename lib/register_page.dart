@@ -80,7 +80,6 @@ class RegisterPage extends StatelessWidget {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                  // Here you can add the functionality to save the data
                   Fluttertoast.showToast(msg: 'Kayıt başarılı');
                   Navigator.pop(context);
                 },

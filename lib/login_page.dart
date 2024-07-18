@@ -35,7 +35,16 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                Fluttertoast.showToast(msg: 'Giriş Başarılı');
+                String email = emailController.text;
+                String password = passwordController.text;
+
+                if (email == 'admin' && password == 'password123') {
+                  Fluttertoast.showToast(msg: 'Giriş Başarılı');
+                  Navigator.pushReplacementNamed(context, '/mood');
+                } else {
+                  Fluttertoast.showToast(
+                      msg: 'Hatalı kullanıcı adı veya şifre');
+                }
               },
               child: Text('Giriş Yap'),
             ),

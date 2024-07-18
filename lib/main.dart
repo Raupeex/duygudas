@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'login_register.dart';
 import 'login_page.dart';
 import 'register_page.dart';
+import 'mood.dart';
+import 'calendar_page.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,47 +18,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SplashScreen(),
       routes: {
+        '/login_register': (context) => LoginRegisterPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
+        '/mood': (context) => MoodSelectorPage(),
+        '/calendar': (context) => CalendarPage(),
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Hoşgeldiniz'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ClipOval(child: Image.asset('assets/images/logog.png',
-              width: 170.0,  // Genişlik
-              height: 170.0, // Yükseklik
-              fit: BoxFit.cover,)),
-            SizedBox(height: 150),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              },
-              child: Text('Giriş Yap'),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/register');
-              },
-              child: Text('Kayıt Ol'),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
