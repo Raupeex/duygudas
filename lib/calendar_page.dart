@@ -77,7 +77,7 @@ class _CalendarPageState extends State<CalendarPage> {
         ),
       );
     } else {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
   }
 
@@ -85,7 +85,7 @@ class _CalendarPageState extends State<CalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Takvim'),
+        title: const Text('Takvim'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -7,8 +7,10 @@ class LoginRegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hoşgeldiniz'),
+        title: const Text('Hoşgeldiniz'),
+        backgroundColor: Color(0xFFF0F8FF),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,19 +23,27 @@ class LoginRegisterPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 150),
+            const SizedBox(height: 150),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              child: Text('Giriş Yap'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF36DCD9),
+                foregroundColor: Colors.black,
+              ),
+              child: const Text('Giriş Yap'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/register');
               },
-              child: Text('Kayıt Ol'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF8AFAA4),
+                foregroundColor: Colors.black,
+              ),
+              child: const Text('Kayıt Ol'),
             ),
           ],
         ),

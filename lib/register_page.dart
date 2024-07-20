@@ -14,8 +14,10 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kayıt Ol'),
+        title: const Text('Kayıt Ol'),
+        backgroundColor: Color(0xFFF0F8FF),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -24,66 +26,112 @@ class RegisterPage extends StatelessWidget {
             children: [
               TextField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Ad Soyad',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextField(
                 controller: nicknameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Rumuz',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextField(
                 controller: dobController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Doğum Tarihi',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
               SizedBox(height: 16),
               TextField(
                 controller: phoneController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Telefon',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextField(
                 controller: emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Mail Adresi',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextField(
                 controller: diagnosisController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Psikolojik rahatsızlık tanıları',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
               SizedBox(height: 16),
               TextField(
                 controller: medicationController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Kullanılan psikiyatri ilaçları',
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
                 ),
               ),
               SizedBox(height: 16),
+              TextField(
+                controller: medicationController,
+                decoration: const InputDecoration(
+                  labelText: 'Şifre',
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   Fluttertoast.showToast(msg: 'Kayıt başarılı');
                   Navigator.pop(context);
                 },
-                child: Text('Kayıt Ol'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF8AFAA4),
+                  foregroundColor: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 90, vertical: 15),
+                ),
+                child: const Text('Kayıt Ol'),
               ),
             ],
           ),
