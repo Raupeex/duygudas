@@ -63,11 +63,13 @@ Duygudaş, kullanıcıların ruh sağlığını ve genel iyilik halini geliştir
 - **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. >[WhatsApp](https://egeedutr-my.sharepoint.com/:w:/g/personal/45220000240_ogrenci_ege_edu_tr/EXPIsyvtuOpBq-R7sBHjB6gBKkV8Grrx9OU9RR1ovHjpgw?e=BhQ6G6)
 
  <details><summary><h2>Sprint Board Screenshotları</h2></summary>
+   
 <img width="901" alt="1" src="https://github.com/Raupeex/duygudas/assets/170167320/e50d8892-a734-41c1-9554-57328165a2dd">
 <img width="913" alt="2" src="https://github.com/Raupeex/duygudas/assets/170167320/9ce93902-9c10-4b1c-b221-a326d94a5a72">
 </details>
 
  <details><summary><h2>Ürün Durumu: Ekran görüntüleri</h2></summary>
+   
 ![Giriş sayfası](https://github.com/Raupeex/duygudas/assets/170167320/92067f92-cd2c-4119-a220-654353a64be4)
 </details>
 
@@ -101,7 +103,7 @@ Bu sprintte, kullanıcı arayüzü tasarımı ve temel proje yapısı gibi önem
   
 <summary><h2>Ürün Durumu: Ekran görüntüleri</h2></summary> 
 
-![Renk Paleti](https://github.com/user-attachments/assets/4cf1053d-b6b9-4345-bccc-04c0744b7f8a)  
+ 
 ![Mod Sayfası](https://github.com/user-attachments/assets/cf8dbb11-3c9b-4ad6-a142-70198bb71ebd)    
 ![Takvim](https://github.com/user-attachments/assets/321ef2f0-02e0-4cc3-acb7-a8cea53fc841)   
 ![WhatsApp Görsel 2024-07-21 saat 17 50 00_52ea705e](https://github.com/user-attachments/assets/a31a91ac-8437-4dc4-a822-effe3644c5e3)   
