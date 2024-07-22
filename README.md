@@ -87,7 +87,14 @@ Bu sprintte, kullanıcı arayüzü tasarımı ve temel proje yapısı gibi önem
 </details>
 
 <details><summary><h1>Sprint 2</h1></summary>
-
+  
+ **Sprint notları:**
+- Mod seçme sayfası oluşturuldu.
+- Emojilere karar verildi.
+- Scaffold ve AppBar kullanılarak ana sayfa yapısı tamamlandı.  
+- Backend entegrasyonunda performans sorunları yaşandı.  
+- Takvim sayfa yapısında bazı hatalar oluştu.
+  
 - **Sprint içi puan değerlendirmesi:** 100 Puan
 - **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İkinci sprint'in 100 puan olması kararlaştırıldı ancak 80 puan tamamlanabildi. 
 - **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. >[WhatsApp](https://egeedutr-my.sharepoint.com/:w:/g/personal/45220000240_ogrenci_ege_edu_tr/EY9jJ7OhBHVJrxzT0IPyXIsBVhRVil70z1QbM8lXoN76DQ?e=NYkrQu)
