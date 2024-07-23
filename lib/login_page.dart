@@ -56,7 +56,7 @@ class LoginPage extends StatelessWidget {
 
                 if (email == 'admin' && password == 'password123') {
                   Fluttertoast.showToast(msg: 'Giriş Başarılı');
-                  Navigator.pushReplacementNamed(context, '/mood');
+                  Navigator.pushReplacementNamed(context, '/main_page');
                 } else {
                   Fluttertoast.showToast(
                       msg: 'Hatalı kullanıcı adı veya şifre');

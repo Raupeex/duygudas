@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'login_register.dart';
+
+import 'breathing_exercises.dart';
+import 'exercises.dart';
 import 'login_page.dart';
+import 'login_register.dart';
+import 'main_page.dart';
+import 'professional_support.dart';
+import 'profile_edit.dart';
 import 'register_page.dart';
-import 'mood.dart';
-import 'calendar_page.dart';
+import 'relaxation_exercises.dart';
+import 'settings_page.dart';
 import 'splash_screen.dart';
+import 'test_results.dart';
+import 'tests.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,8 +31,16 @@ class MyApp extends StatelessWidget {
         '/login_register': (context) => LoginRegisterPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
-        '/mood': (context) => MoodSelectorPage(),
-        '/calendar': (context) => CalendarPage(),
+        '/main_page': (context) => MainPage(),
+        '/settings': (context) => SettingsPage(),
+        '/tests': (context) => TestsPage(),
+        '/exercises': (context) => ExercisesPage(),
+        '/breathing_exercises': (context) => BreathingExercisesPage(),
+        '/relaxation_exercises': (context) => RelaxationExercisesPage(),
+        '/professional_support': (context) =>
+            ProfessionalSupportPage(), // Rota eklendi
+        '/profile_edit': (context) => ProfileEditPage(), // Rota eklendi
+        '/test_results': (context) => TestResultsPage(),
       },
     );
   }
