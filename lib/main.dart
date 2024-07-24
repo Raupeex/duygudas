@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'autogenetic.dart';
 import 'breathing_exercises.dart';
 import 'exercises.dart';
+import 'four_four_four_breath.dart';
 import 'login_page.dart';
 import 'login_register.dart';
 import 'main_page.dart';
@@ -37,10 +39,11 @@ class MyApp extends StatelessWidget {
         '/exercises': (context) => ExercisesPage(),
         '/breathing_exercises': (context) => BreathingExercisesPage(),
         '/relaxation_exercises': (context) => RelaxationExercisesPage(),
-        '/professional_support': (context) =>
-            ProfessionalSupportPage(), // Rota eklendi
-        '/profile_edit': (context) => ProfileEditPage(), // Rota eklendi
+        '/professional_support': (context) => ProfessionalSupportPage(),
+        '/profile_edit': (context) => ProfileEditPage(),
         '/test_results': (context) => TestResultsPage(),
+        '/four_four_four_breath': (context) => FourFourFourBreathPage(),
+        '/autogenetic': (context) => AutogeneticPage(),
       },
     );
   }

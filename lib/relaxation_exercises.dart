@@ -17,110 +17,41 @@ class RelaxationExercisesPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Otojenik gevşeme terapisi'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Otojenik Gevşeme Terapisi',
+              'Zihinsel rahatlama sağlamak için belirli yönergeleri takip ederek bedenini ve zihnini gevşetmeni sağlar. Beş farklı konsantrasyon seviyesi sayesinde bedenini ve zihnini rahatlatırsın.',
+              route: '/autogenetic',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Tüm Vücut Gevşeme Egzersizleri'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Tüm Vücut Gevşeme Egzersizleri',
+              'Kaslarını sırayla kasar ve gevşeterek hem zihinsel hem de fiziksel rahatlama sağlar. Kasılma ve gevşeme döngüsü, bedenin genel gevşemesine yardımcı olur.',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Görselleştirme (imajinasyon)'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Görselleştirme (İmajinasyon)',
+              'Zihninde rahatlatıcı bir sahne veya durum hayal ederek zihinsel rahatlama ve stres azaltma sağlar. Doğal ortamları hayal etmek özellikle etkilidir.',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Progresif kas gevşetme'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Progresif Kas Gevşetme',
+              'Kaslarını kasıp gevşeterek zihinsel ve fiziksel rahatlama sağlar. Hem terapist eşliğinde hem de kendi başına uygulanabilir.',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Meditasyon'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Meditasyon',
+              'Odaklanma ve zihinsel disiplinle zihni ve bedeni rahatlatır. Farkındalık ve bilinçli bir yaşam sürme konusunda da fayda sağlar.',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Yoga'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Yoga',
+              'Beden ve zihin arasındaki bağlantıyı güçlendirir. Esneme, nefes kontrolü ve zihni sakinleştirme ile rahatlama sağlar.',
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text('Otomatik yazma'),
-              ),
+            _buildExerciseContainer(
+              context,
+              'Otomatik Yazma',
+              'Düşünce ve duygularını serbestçe ifade etmeni sağlar. Stresi azaltır ve duygularını anlamana yardımcı olur.',
             ),
           ],
         ),
@@ -143,6 +74,50 @@ class RelaxationExercisesPage extends StatelessWidget {
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },
+      ),
+    );
+  }
+
+  Widget _buildExerciseContainer(
+      BuildContext context, String title, String description,
+      {String? route}) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+      margin: EdgeInsets.symmetric(vertical: 8.0),
+      padding: EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 189, 150, 207),
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: ElevatedButton(
+              onPressed: route != null
+                  ? () {
+                      Navigator.pushNamed(context, route);
+                    }
+                  : () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+              ),
+              child: Text(
+                title,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            description,
+            style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+          ),
+        ],
       ),
     );
   }
