@@ -1,37 +1,81 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart'; // Global değişkenleri kullanmak için import ediyoruz
+
 class MainPage extends StatelessWidget {
+  void _showAvatarOptions(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200,
+          child: GridView.builder(
+            itemCount: avatarPaths.length,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                  userAvatar = avatarPaths[index];
+                  // setState'i burada kullanamıyoruz çünkü StatelessWidget içindeyiz
+                  // Bunun yerine MaterialApp'ın köküne Navigator.pushReplacement kullanarak sayfayı yenileyebiliriz
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          MainPage(),
+                      transitionDuration: Duration(seconds: 0),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.all(16.0), // Padding değerini artırdık
+                  child: Image.asset(avatarPaths[index]),
+                ),
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ana Sayfa'),
         leading: PopupMenuButton<String>(
-          icon: Icon(Icons.person),
+          icon: CircleAvatar(
+            backgroundImage:
+                AssetImage(userAvatar), // Global değişken kullanılıyor
+          ),
           onSelected: (String result) {
-            if (result == 'Ayarlar') {
-              Navigator.pushNamed(context, '/settings');
+            if (result == 'Avatarı Değiştir') {
+              _showAvatarOptions(context);
+            } else if (result == 'Test Sonuçlarım') {
+              Navigator.pushNamed(context, '/test_results');
             } else if (result == 'Profilimi Düzenle') {
-              Navigator.pushNamed(context, '/profile_edit');
+              Navigator.pushNamed(context, '/edit_profile');
             } else if (result == 'Hesabı Kapat') {
               Navigator.pushNamedAndRemoveUntil(
                   context, '/login_register', (route) => false);
-            } else if (result == 'Test Sonuçlarım') {
-              Navigator.pushNamed(context, '/test_results');
             }
           },
           itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
             const PopupMenuItem<String>(
-              value: 'Ayarlar',
-              child: Text('Ayarlar'),
-            ),
-            const PopupMenuItem<String>(
-              value: 'Profilimi Düzenle',
-              child: Text('Profilimi Düzenle'),
+              value: 'Avatarı Değiştir',
+              child: Text('Avatarı Değiştir'),
             ),
             const PopupMenuItem<String>(
               value: 'Test Sonuçlarım',
               child: Text('Test Sonuçlarım'),
+            ),
+            const PopupMenuItem<String>(
+              value: 'Profilimi Düzenle',
+              child: Text('Profilimi Düzenle'),
             ),
             const PopupMenuItem<String>(
               value: 'Hesabı Kapat',
@@ -134,12 +178,14 @@ class MainPage extends StatelessWidget {
                 color: Colors.white,
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/personal_information');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Kişisel bilgilerim'),
+                child: Text('Kişisel Bilgilerim'),
               ),
             ),
           ],

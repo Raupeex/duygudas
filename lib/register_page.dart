@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'main.dart'; // Global değişkenleri kullanmak için import ediyoruz
+
 class RegisterPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController surnameController = TextEditingController();
   final TextEditingController nicknameController = TextEditingController();
+  final TextEditingController tcController = TextEditingController();
   final TextEditingController dobController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController diagnosisController = TextEditingController();
   final TextEditingController medicationController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +42,33 @@ class RegisterPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               TextField(
+                controller: surnameController,
+                decoration: const InputDecoration(
+                  labelText: 'Soyad',
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
                 controller: nicknameController,
                 decoration: const InputDecoration(
                   labelText: 'Rumuz',
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: tcController,
+                decoration: const InputDecoration(
+                  labelText: 'TC Kimlik Numarası',
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -109,7 +138,7 @@ class RegisterPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
               TextField(
-                controller: medicationController,
+                controller: passwordController,
                 decoration: const InputDecoration(
                   labelText: 'Şifre',
                   filled: true,
@@ -118,12 +147,22 @@ class RegisterPage extends StatelessWidget {
                     borderSide: BorderSide(color: Color(0xFFDFD8D8)),
                   ),
                 ),
+                obscureText: true,
               ),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
+                  userName = nameController.text;
+                  userSurname = surnameController.text;
+                  userNickname = nicknameController.text;
+                  userPhone = phoneController.text;
+                  userEmail = emailController.text;
+                  userDiagnosis = diagnosisController.text;
+                  userMedications = medicationController.text;
+
                   Fluttertoast.showToast(msg: 'Kayıt başarılı');
-                  Navigator.pop(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/login_register', (route) => false);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF8AFAA4),

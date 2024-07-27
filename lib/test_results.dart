@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart'; // Global listeyi kullanmak için import ediyoruz
+
 class TestResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test Sonuçlarım'),
+        title: Text('Test Sonuçları'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -13,8 +15,13 @@ class TestResultsPage extends StatelessWidget {
           },
         ),
       ),
-      body: Center(
-        child: Text('Test sonuçları sayfası'),
+      body: ListView.builder(
+        itemCount: testResults.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(testResults[index]),
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

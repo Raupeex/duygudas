@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'register_page.dart';
 
 class LoginRegisterPage extends StatelessWidget {
   @override
@@ -44,6 +42,19 @@ class LoginRegisterPage extends StatelessWidget {
                 foregroundColor: Colors.black,
               ),
               child: const Text('Kayıt Ol'),
+            ),
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/forgotten_password');
+              },
+              child: Text(
+                'Şifremi Unuttum',
+                style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
             ),
           ],
         ),

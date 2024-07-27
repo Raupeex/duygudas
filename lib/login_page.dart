@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
                 String email = emailController.text;
                 String password = passwordController.text;
 
-                if (email == 'admin' && password == 'password123') {
+                if (email == 'gamze@mail.com' && password == '1234') {
                   Fluttertoast.showToast(msg: 'Giriş Başarılı');
                   Navigator.pushReplacementNamed(context, '/main_page');
                 } else {

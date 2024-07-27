@@ -44,12 +44,14 @@ class TestsPage extends StatelessWidget {
               ),
               margin: EdgeInsets.symmetric(vertical: 8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/test_phq9');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Depresyon Testi'),
+                child: Text('Depresyon Testi (PHQ-9)'),
               ),
             ),
             Container(
@@ -66,7 +68,7 @@ class TestsPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Text('Hasta Sağlık Anketi 9 (PHQ-9)'),
+                    Text('Hasta Sağlık Anketi'),
                   ],
                 ),
               ),
