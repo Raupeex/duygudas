@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +52,18 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 String email = emailController.text;
                 String password = passwordController.text;
 
-                if (email == 'admin' && password == 'password123') {
+                try {
+                  await auth.signInWithEmailAndPassword(
+                    email: email,
+                    password: password,
+                  );
                   Fluttertoast.showToast(msg: 'Giriş Başarılı');
                   Navigator.pushReplacementNamed(context, '/mood');
-                } else {
+                } catch (e) {
                   Fluttertoast.showToast(
                       msg: 'Hatalı kullanıcı adı veya şifre');
                 }

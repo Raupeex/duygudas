@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'login_register.dart';
-import 'login_page.dart';
-import 'register_page.dart';
-import 'mood.dart';
-import 'calendar_page.dart';
-import 'splash_screen.dart';
+import 'screens/login_register.dart';
+import 'screens/login_page.dart';
+import 'screens/register_page.dart';
+import 'screens/mood.dart';
+import 'screens/calendar_page.dart';
+import 'screens/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
