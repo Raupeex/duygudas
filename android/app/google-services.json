@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489045078046",
+    "project_id": "duygudas-app",
+    "storage_bucket": "duygudas-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489045078046:android:6d74cce2886094affa7e0f",
+        "android_client_info": {
+          "package_name": "com.example.bootcamp_duygudas_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo1m6juoh1LfrkhZbMj98Bi-Z50YQZD6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
