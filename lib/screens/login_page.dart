@@ -55,17 +55,24 @@ class LoginPage extends StatelessWidget {
               onPressed: () async {
                 String email = emailController.text;
                 String password = passwordController.text;
-
                 try {
                   await auth.signInWithEmailAndPassword(
                     email: email,
                     password: password,
                   );
                   Fluttertoast.showToast(msg: 'Giriş Başarılı');
-                  Navigator.pushReplacementNamed(context, '/mood');
-                } catch (e) {
-                  Fluttertoast.showToast(
-                      msg: 'Hatalı kullanıcı adı veya şifre');
+                  Navigator.pushReplacementNamed(context, '/main_page');
+                } on FirebaseAuthException catch (e) {
+                  if (e.code == 'user-not-found') {
+                    Fluttertoast.showToast(
+                        msg:
+                            'Bu e-posta adresi ile kayıtlı bir kullanıcı bulunamadı.');
+                  } else if (e.code == 'wrong-password') {
+                    Fluttertoast.showToast(msg: 'Hatalı şifre.');
+                  } else {
+                    Fluttertoast.showToast(
+                        msg: 'Giriş başarısız: ${e.message}');
+                  }
                 }
               },
               style: ElevatedButton.styleFrom(

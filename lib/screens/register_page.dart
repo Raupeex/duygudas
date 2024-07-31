@@ -5,9 +5,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController surnameController = TextEditingController();
   final TextEditingController nicknameController = TextEditingController();
+  final TextEditingController tcController = TextEditingController();
   final TextEditingController dobController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController phoneController =
+      TextEditingController(text: '05');
   final TextEditingController emailController = TextEditingController();
   final TextEditingController diagnosisController = TextEditingController();
   final TextEditingController medicationController = TextEditingController();
@@ -32,7 +35,19 @@ class RegisterPage extends StatelessWidget {
               TextField(
                 controller: nameController,
                 decoration: const InputDecoration(
-                  labelText: 'Ad Soyad',
+                  labelText: 'Ad',
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: surnameController,
+                decoration: const InputDecoration(
+                  labelText: 'Soyad',
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -54,6 +69,19 @@ class RegisterPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               TextField(
+                controller: tcController,
+                decoration: const InputDecoration(
+                  labelText: 'TC Kimlik Numarası',
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFDFD8D8)),
+                  ),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 16),
+              TextField(
                 controller: dobController,
                 decoration: const InputDecoration(
                   labelText: 'Doğum Tarihi (DD/MM/YYYY)',
@@ -65,29 +93,49 @@ class RegisterPage extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.datetime,
                 onChanged: (value) {
-                  if (value.length == 2 || value.length == 5) {
-                    dobController.text = '$value/';
-                    dobController.selection = TextSelection.fromPosition(
-                      TextPosition(offset: dobController.text.length),
-                    );
-                  } else if (value.length > 10) {
-                    dobController.text = value.substring(0, 10);
-                    Fluttertoast.showToast(
-                        msg: 'Geçersiz tarih formatı. DD/MM/YYYY olmalı.');
+                  String newText = value;
+                  // Doğum tarihi alanında / karakterlerini doğru yerlerde tutma
+                  if (value.length > 10) {
+                    newText = value.substring(0, 10);
                   }
+                  if (value.length == 2 || value.length == 5) {
+                    if (!value.endsWith('/')) {
+                      newText = value + '/';
+                    }
+                  }
+                  if (value.length == 3 && value[2] != '/') {
+                    newText = value.substring(0, 2) + '/' + value.substring(2);
+                  } else if (value.length == 6 && value[5] != '/') {
+                    newText = value.substring(0, 5) + '/' + value.substring(5);
+                  }
+                  dobController.value = TextEditingValue(
+                    text: newText,
+                    selection: TextSelection.fromPosition(
+                      TextPosition(offset: newText.length),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 16),
               TextField(
                 controller: phoneController,
                 decoration: const InputDecoration(
-                  labelText: 'Telefon',
+                  labelText: 'Telefon (05...)',
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xFFDFD8D8)),
                   ),
                 ),
+                keyboardType: TextInputType.phone,
+                onChanged: (value) {
+                  if (!value.startsWith('05')) {
+                    phoneController.text = '05';
+                    phoneController.selection = TextSelection.fromPosition(
+                      TextPosition(offset: phoneController.text.length),
+                    );
+                  }
+                },
               ),
               const SizedBox(height: 16),
               TextField(
@@ -100,12 +148,13 @@ class RegisterPage extends StatelessWidget {
                     borderSide: BorderSide(color: Color(0xFFDFD8D8)),
                   ),
                 ),
+                keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
               TextField(
                 controller: diagnosisController,
                 decoration: const InputDecoration(
-                  labelText: 'Psikolojik rahatsızlık tanıları',
+                  labelText: 'Psikolojik Rahatsızlık Tanıları',
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -117,7 +166,7 @@ class RegisterPage extends StatelessWidget {
               TextField(
                 controller: medicationController,
                 decoration: const InputDecoration(
-                  labelText: 'Kullanılan psikiyatri ilaçları',
+                  labelText: 'Kullanılan Psikiyatri İlaçları',
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -142,7 +191,9 @@ class RegisterPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   String name = nameController.text;
+                  String surname = surnameController.text;
                   String nickname = nicknameController.text;
+                  String tc = tcController.text;
                   String dob = dobController.text;
                   String phone = phoneController.text;
                   String email = emailController.text;
@@ -152,8 +203,12 @@ class RegisterPage extends StatelessWidget {
 
                   // Validations
                   if (name.isEmpty) {
-                    Fluttertoast.showToast(
-                        msg: 'Ad Soyad alanı boş bırakılamaz.');
+                    Fluttertoast.showToast(msg: 'Ad alanı boş bırakılamaz.');
+                    return;
+                  }
+
+                  if (surname.isEmpty) {
+                    Fluttertoast.showToast(msg: 'Soyad alanı boş bırakılamaz.');
                     return;
                   }
 
@@ -163,28 +218,53 @@ class RegisterPage extends StatelessWidget {
                     return;
                   }
 
+                  // Doğum tarihi doğrulaması (DD/MM/YYYY formatında ve bugünden önce olmalı)
                   if (!RegExp(r'^\d{2}/\d{2}/\d{4}$').hasMatch(dob)) {
                     Fluttertoast.showToast(
                         msg:
                             'Lütfen geçerli bir doğum tarihi girin (DD/MM/YYYY).');
                     return;
                   }
+                  DateTime birthDate = DateTime.parse(
+                      '${dob.substring(6)}-${dob.substring(3, 5)}-${dob.substring(0, 2)}');
+                  if (birthDate.isAfter(DateTime.now())) {
+                    Fluttertoast.showToast(
+                        msg: 'Doğum tarihi bugünden önce olmalıdır.');
+                    return;
+                  }
 
-                  if (!RegExp(r'^\d+$').hasMatch(phone) || phone.length < 10) {
+                  // Telefon numarası doğrulaması (05 ile başlamalı)
+                  if (!phone.startsWith('05') ||
+                      !RegExp(r'^\d+$').hasMatch(phone) ||
+                      phone.length != 11) {
                     Fluttertoast.showToast(
                         msg: 'Lütfen geçerli bir telefon numarası girin.');
                     return;
                   }
 
-                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(email)) {
+                  // E-posta adresi doğrulaması (belirtilen domainlerle sınırlı)
+                  if (!RegExp(
+                          r'^[^@]+@(gmail\.com|hotmail\.com|icloud\.com|outlook\.com)$')
+                      .hasMatch(email)) {
                     Fluttertoast.showToast(
                         msg: 'Lütfen geçerli bir e-posta adresi girin.');
                     return;
                   }
 
-                  if (password.isEmpty || password.length < 6) {
+                  if (tc.isEmpty || tc.length != 11) {
                     Fluttertoast.showToast(
-                        msg: 'Şifre en az 6 karakter olmalıdır.');
+                        msg: 'TC Kimlik Numarası 11 haneli olmalıdır.');
+                    return;
+                  }
+
+                  // Şifre doğrulaması (en az 6 karakter, 1 harf ve 1 rakam içermeli)
+                  if (password.isEmpty ||
+                      password.length < 6 ||
+                      !RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]')
+                          .hasMatch(password)) {
+                    Fluttertoast.showToast(
+                        msg:
+                            'Şifre en az 6 karakter, 1 harf ve 1 rakam içermelidir.');
                     return;
                   }
 
@@ -201,7 +281,9 @@ class RegisterPage extends StatelessWidget {
                     if (user != null) {
                       await firestore.collection('users').doc(user.uid).set({
                         'name': name,
+                        'surname': surname,
                         'nickname': nickname,
+                        'tc': tc,
                         'dob': dob,
                         'phone': phone,
                         'email': email,
