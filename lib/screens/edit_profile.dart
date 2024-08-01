@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../utils/shared_preferences_util.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -17,13 +18,40 @@ class _EditProfilePageState extends State<EditProfilePage> {
   final TextEditingController _diagnosisController = TextEditingController();
   final TextEditingController _medicationsController = TextEditingController();
 
+  String _selectedAvatar = 'assets/images/fox.png';
+
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  static const List<String> avatarPaths = [
+    'assets/images/bear.png',
+    'assets/images/cat.png',
+    'assets/images/chicken.png',
+    'assets/images/dog.png',
+    'assets/images/fox.png',
+    'assets/images/meerkat.png',
+    'assets/images/panda.png',
+  ];
 
   @override
   void initState() {
     super.initState();
     _loadUserData();
+    _loadAvatar();
+  }
+
+  Future<void> _loadAvatar() async {
+    final avatar = await SharedPreferencesUtil.getAvatar();
+    setState(() {
+      _selectedAvatar = avatar;
+    });
+  }
+
+  Future<void> _saveAvatar(String avatar) async {
+    await SharedPreferencesUtil.saveAvatar(avatar);
+    setState(() {
+      _selectedAvatar = avatar;
+    });
   }
 
   void _loadUserData() {
@@ -77,7 +105,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     // Telefon numarası doğrulaması (05 ile başlamalı)
     if (!phone.startsWith('05') ||
         !RegExp(r'^\d+$').hasMatch(phone) ||
-        phone.length != 10) {
+        phone.length != 11) {
       Fluttertoast.showToast(msg: 'Lütfen geçerli bir telefon numarası girin.');
       return;
     }
@@ -102,6 +130,34 @@ class _EditProfilePageState extends State<EditProfilePage> {
     }
   }
 
+  void _showAvatarOptions(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200,
+          child: GridView.builder(
+            itemCount: avatarPaths.length,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                onTap: () async {
+                  Navigator.pop(context);
+                  await _saveAvatar(avatarPaths[index]);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Image.asset(avatarPaths[index]),
+                ),
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,6 +174,31 @@ class _EditProfilePageState extends State<EditProfilePage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage(_selectedAvatar),
+                  ),
+                  SizedBox(height: 20),
+                  Text('Avatarınızı seçin:'),
+                  Wrap(
+                    spacing: 10,
+                    children: avatarPaths.map((avatarPath) {
+                      return GestureDetector(
+                        onTap: () => _saveAvatar(avatarPath),
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage(avatarPath),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ),
             TextField(
               controller: _nameController,
               decoration: InputDecoration(labelText: 'Ad'),
@@ -133,6 +214,15 @@ class _EditProfilePageState extends State<EditProfilePage> {
             TextField(
               controller: _phoneController,
               decoration: InputDecoration(labelText: 'Telefon'),
+              keyboardType: TextInputType.phone,
+              onChanged: (value) {
+                if (!value.startsWith('05')) {
+                  _phoneController.text = '05';
+                  _phoneController.selection = TextSelection.fromPosition(
+                    TextPosition(offset: _phoneController.text.length),
+                  );
+                }
+              },
             ),
             TextField(
               controller: _emailController,

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
+import '../utils/shared_preferences_util.dart'; // SharedPreferences yardımcı sınıfını ekle
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -56,12 +57,27 @@ class LoginPage extends StatelessWidget {
                 String email = emailController.text;
                 String password = passwordController.text;
                 try {
-                  await auth.signInWithEmailAndPassword(
+                  UserCredential userCredential =
+                      await auth.signInWithEmailAndPassword(
                     email: email,
                     password: password,
                   );
-                  Fluttertoast.showToast(msg: 'Giriş Başarılı');
-                  Navigator.pushReplacementNamed(context, '/main_page');
+
+                  final user = userCredential.user;
+                  if (user != null) {
+                    await SharedPreferencesUtil.saveUserName(
+                        user.displayName ?? 'Ad Yok');
+                    await SharedPreferencesUtil.saveUserEmail(
+                        user.email ?? 'Email Yok');
+                    final token = await user.getIdToken();
+                    if (token != null) {
+                      await SharedPreferencesUtil.saveUserToken(token);
+                    }
+                    Fluttertoast.showToast(msg: 'Giriş Başarılı');
+                    Navigator.pushReplacementNamed(context, '/main_page');
+                  } else {
+                    Fluttertoast.showToast(msg: 'Giriş başarısız');
+                  }
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found') {
                     Fluttertoast.showToast(

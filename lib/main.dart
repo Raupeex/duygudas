@@ -27,29 +27,6 @@ void main() async {
   runApp(MyApp());
 }
 
-List<String> testResults = [];
-
-// Global variables to hold user information
-String userName = "";
-String userSurname = "";
-String userNickname = "";
-String userPhone = "";
-String userEmail = "";
-String userDiagnosis = "";
-String userMedications = "";
-String userAvatar = 'assets/images/fox.png'; //
-
-// Avatar options
-List<String> avatarPaths = [
-  'assets/images/bear.png',
-  'assets/images/cat.png',
-  'assets/images/chicken.png',
-  'assets/images/dog.png',
-  'assets/images/fox.png',
-  'assets/images/meerkat.png',
-  'assets/images/panda.png',
-];
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

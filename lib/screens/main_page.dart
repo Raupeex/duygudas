@@ -1,8 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import '../main.dart'; // Global değişkenleri kullanmak için import ediyoruz
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
 
-class MainPage extends StatelessWidget {
+class _MainPageState extends State<MainPage> {
+  String userAvatar = 'assets/images/fox.png';
+
+  static const List<String> avatarPaths = [
+    'assets/images/bear.png',
+    'assets/images/cat.png',
+    'assets/images/chicken.png',
+    'assets/images/dog.png',
+    'assets/images/fox.png',
+    'assets/images/meerkat.png',
+    'assets/images/panda.png',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAvatar();
+  }
+
+  Future<void> _saveAvatar(String avatarPath) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('user_avatar', avatarPath);
+    setState(() {
+      userAvatar = avatarPath;
+    });
+  }
+
+  Future<void> _loadAvatar() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userAvatar = prefs.getString('user_avatar') ?? 'assets/images/fox.png';
+    });
+  }
+
   void _showAvatarOptions(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -15,19 +52,9 @@ class MainPage extends StatelessWidget {
                 SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: () {
+                onTap: () async {
                   Navigator.pop(context);
-                  userAvatar = avatarPaths[index];
-                  // setState'i burada kullanamıyoruz çünkü StatelessWidget içindeyiz
-                  // Bunun yerine MaterialApp'ın köküne Navigator.pushReplacement kullanarak sayfayı yenileyebiliriz
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation1, animation2) =>
-                          MainPage(),
-                      transitionDuration: Duration(seconds: 0),
-                    ),
-                  );
+                  await _saveAvatar(avatarPaths[index]);
                 },
                 child: Padding(
                   padding:
@@ -49,8 +76,7 @@ class MainPage extends StatelessWidget {
         title: Text('Ana Sayfa'),
         leading: PopupMenuButton<String>(
           icon: CircleAvatar(
-            backgroundImage:
-                AssetImage(userAvatar), // Global değişken kullanılıyor
+            backgroundImage: AssetImage(userAvatar),
           ),
           onSelected: (String result) {
             if (result == 'Avatarı Değiştir') {
