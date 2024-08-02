@@ -144,3 +144,80 @@ https://github.com/user-attachments/assets/0c2ceabd-18c2-491b-866b-4b6c96534ea6
 </details>
 
 </details>
+<details><summary><h1>Sprint 3</h1></summary>
+  
+ **Sprint notları:**
+Bu sprintte, Duygudaş uygulaması için misafir kullanıcı deneyimini geliştirmeye ve kullanıcı yönetimi altyapısını güçlendirmeye odaklandık. Ayrıca, sohbet botu ve sesli komut gibi yeni özellikler ekleyerek kullanıcı etkileşimini artırdık.
+- **Sprint içi puan değerlendirmesi:** 150 Puan
+- **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. Üçüncü sprint'in 150 puan olması kararlaştırıldı ve tamamlandı.
+- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. >[WhatsApp-3.docx](https://github.com/user-attachments/files/16472949/WhatsApp-3.docx)
+
+ <details>
+<summary><h2>Sprint Board Screenshotları</h2></summary> 
+   
+
+![WhatsApp Görsel 2024-08-02 saat 23 39 39_e047efd9](https://github.com/user-attachments/assets/2b6a8aa2-f049-42be-b68d-f3e90f3daca3)
+![WhatsApp Görsel 2024-08-02 saat 23 34 06_4492963c](https://github.com/user-attachments/assets/a8fda6e1-b819-46c0-9e1b-2c10546d8db9)  
+   
+</details>
+<details>
+  
+<summary><h2>Ürün Durumu: Ekran görüntüleri</h2></summary>  
+
+![IMG-20240802-WA0015](https://github.com/user-attachments/assets/7c919046-1393-4ab1-ac70-e1c40fe3e962)
+![IMG-20240802-WA0018](https://github.com/user-attachments/assets/1ccc1412-0b7f-476e-b75d-bb730209683d)
+![IMG-20240802-WA0011](https://github.com/user-attachments/assets/109149b6-4ee8-4d20-8c3f-244e851cad68)
+![IMG-20240802-WA0008](https://github.com/user-attachments/assets/d57d2c4c-3bbd-4890-94aa-58db0d0ff7a0)
+![IMG-20240802-WA0010](https://github.com/user-attachments/assets/924711e9-ae3a-4019-b82c-802d58a0e3f3)
+![IMG-20240802-WA0029](https://github.com/user-attachments/assets/be24fccc-d9df-4549-b3d5-ff7365de33da)
+![IMG-20240802-WA0022](https://github.com/user-attachments/assets/8841f25f-df46-46f5-8bdd-927c666bb867)
+![IMG-20240802-WA0025](https://github.com/user-attachments/assets/680a788a-6552-4405-8ca2-5f2f0a365519)
+![IMG-20240802-WA0013](https://github.com/user-attachments/assets/877707cd-2e45-49cd-ab9a-b59e78711962)
+![IMG-20240802-WA0020](https://github.com/user-attachments/assets/a03cbb63-6ddb-4e0e-bad9-5a5a17fe466d)
+![IMG-20240802-WA0028](https://github.com/user-attachments/assets/424f39fc-e267-4ebb-bc9c-6bcdec41d5ca)
+![IMG-20240802-WA0023](https://github.com/user-attachments/assets/3b29f4e1-3292-4e0c-bf03-c4d61baee42f)
+![IMG-20240802-WA0014](https://github.com/user-attachments/assets/35d10c80-ecdd-4ed1-9cfa-7d92fe9cd475)
+![IMG-20240802-WA0021](https://github.com/user-attachments/assets/d5924f24-3bb8-4840-9524-2d4f825062b9)
+![IMG-20240802-WA0017](https://github.com/user-attachments/assets/33f8516c-3207-40a3-888f-08f8daf016f5)
+![IMG-20240802-WA0027](https://github.com/user-attachments/assets/feeb2c05-1a5a-42bc-aea9-91e3addf1061)
+![IMG-20240802-WA0016](https://github.com/user-attachments/assets/ba52a150-5f71-4883-94fc-02e73b818adc)
+![IMG-20240802-WA0019](https://github.com/user-attachments/assets/9c7d09fa-5b1f-4a06-9902-f299d1652483)
+![IMG-20240802-WA0024](https://github.com/user-attachments/assets/69893685-21e8-4a97-9c75-1c88451ec7cd)
+![IMG-20240802-WA0007](https://github.com/user-attachments/assets/09f6ae2a-3687-4e55-8818-9344d413b8b5)
+![IMG-20240802-WA0009](https://github.com/user-attachments/assets/a77a6876-5354-4df4-a2c9-8571b6817c5b)
+![IMG-20240802-WA0012](https://github.com/user-attachments/assets/d2e1ebac-14ff-471e-b790-2990f1e1e259)
+![IMG-20240802-WA0026](https://github.com/user-attachments/assets/37985815-ad68-4b42-99c3-2246967df89c)
+ 
+
+
+
+
+</details>
+<details>
+<summary><h2>Sprint Review</h2></summary>  
+  
+- Kullanıcı verilerini saklamak için Firebase Cloud Firestore veya Realtime Database kullanıldı.
+- Kullanıcı modeli oluşturuldu ve CRUD (Create, Read, Update, Delete) operasyonları uygulandı.
+- Misafir kullanıcılar uygulamayı belirli kısıtlamalarla kullanabilir.
+- Kayıtlı kullanıcılar için oturum açma işlemleri (Firebase Authentication).
+- Android uygulamalarında kullanıcı oturum bilgilerini saklamak için SharedPreferences kullanıldı.
+- Güvenlik amacıyla kullanıcı şifreleri hashlenerek saklandı.
+- Firebase Authentication kullanarak kullanıcı kimlik doğrulaması gerçekleştirildi.
+- Sohbet kısmına AI entegre etmek için Dialogflow kullanıldı.
+- Kullanıcıların sesli komutlarını yazıya çevirmek için speech_to_text entegrasyonu yapıldı.
+- Nefes egzersizleri sayfası kodlandı.
+- Profesyonel destek sayfası oluşturuldu.
+- Test sonuçları sayfası geliştirildi.
+- Testler sayfası ve egzersiz sayfası tamamlandı.
+- Profili düzenle sayfası oluşturuldu.
+
+
+#### Sprint Review katılımcıları: Fatma Zehra Düzenli, Gamze Gezgin, Gamze Berberoğlu,  Hasan Hüseyin Gümüştepe
+
+</details>
+<details>
+<summary><h2>Sprint Retrospective</h2></summary>
+  
+Uygulamamızı daha da geliştirmek için çalışmaya devam edeceğiz. 
+
+</details>
