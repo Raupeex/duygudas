@@ -164,30 +164,16 @@ Bu sprintte, Duygudaş uygulaması için misafir kullanıcı deneyimini gelişti
   
 <summary><h2>Ürün Durumu: Ekran görüntüleri</h2></summary>  
 
+
+![WhatsApp Görsel 2024-08-03 saat 01 02 20_39a22b8f](https://github.com/user-attachments/assets/86fce61a-ca2b-41fc-8d6e-532ce9821d31)
+![WhatsApp Görsel 2024-08-03 saat 01 03 00_51e49b1f](https://github.com/user-attachments/assets/bdc1db96-82ca-45cf-aea0-fbc5a72c930e)
+![WhatsApp Görsel 2024-08-03 saat 01 03 20_1fa0df96](https://github.com/user-attachments/assets/6560edaf-aa98-485e-8903-21c626e6f02d)
+![WhatsApp Görsel 2024-08-03 saat 01 03 35_998dbeb7](https://github.com/user-attachments/assets/e1e4ba1f-5576-4016-b1b4-55054f030989)
+![WhatsApp Görsel 2024-08-03 saat 01 03 52_c36b7c17](https://github.com/user-attachments/assets/5ba2c15c-7c9b-4846-b088-79f664fd9184)
+![WhatsApp Görsel 2024-08-03 saat 01 04 10_5f6112a2](https://github.com/user-attachments/assets/1c59194a-c250-4cea-b709-f38074d85b1c)
 ![IMG-20240802-WA0015](https://github.com/user-attachments/assets/7c919046-1393-4ab1-ac70-e1c40fe3e962)
-![IMG-20240802-WA0018](https://github.com/user-attachments/assets/1ccc1412-0b7f-476e-b75d-bb730209683d)
-![IMG-20240802-WA0011](https://github.com/user-attachments/assets/109149b6-4ee8-4d20-8c3f-244e851cad68)
-![IMG-20240802-WA0008](https://github.com/user-attachments/assets/d57d2c4c-3bbd-4890-94aa-58db0d0ff7a0)
-![IMG-20240802-WA0010](https://github.com/user-attachments/assets/924711e9-ae3a-4019-b82c-802d58a0e3f3)
-![IMG-20240802-WA0029](https://github.com/user-attachments/assets/be24fccc-d9df-4549-b3d5-ff7365de33da)
-![IMG-20240802-WA0022](https://github.com/user-attachments/assets/8841f25f-df46-46f5-8bdd-927c666bb867)
-![IMG-20240802-WA0025](https://github.com/user-attachments/assets/680a788a-6552-4405-8ca2-5f2f0a365519)
-![IMG-20240802-WA0013](https://github.com/user-attachments/assets/877707cd-2e45-49cd-ab9a-b59e78711962)
-![IMG-20240802-WA0020](https://github.com/user-attachments/assets/a03cbb63-6ddb-4e0e-bad9-5a5a17fe466d)
-![IMG-20240802-WA0028](https://github.com/user-attachments/assets/424f39fc-e267-4ebb-bc9c-6bcdec41d5ca)
-![IMG-20240802-WA0023](https://github.com/user-attachments/assets/3b29f4e1-3292-4e0c-bf03-c4d61baee42f)
-![IMG-20240802-WA0014](https://github.com/user-attachments/assets/35d10c80-ecdd-4ed1-9cfa-7d92fe9cd475)
-![IMG-20240802-WA0021](https://github.com/user-attachments/assets/d5924f24-3bb8-4840-9524-2d4f825062b9)
-![IMG-20240802-WA0017](https://github.com/user-attachments/assets/33f8516c-3207-40a3-888f-08f8daf016f5)
 ![IMG-20240802-WA0027](https://github.com/user-attachments/assets/feeb2c05-1a5a-42bc-aea9-91e3addf1061)
-![IMG-20240802-WA0016](https://github.com/user-attachments/assets/ba52a150-5f71-4883-94fc-02e73b818adc)
-![IMG-20240802-WA0019](https://github.com/user-attachments/assets/9c7d09fa-5b1f-4a06-9902-f299d1652483)
-![IMG-20240802-WA0024](https://github.com/user-attachments/assets/69893685-21e8-4a97-9c75-1c88451ec7cd)
-![IMG-20240802-WA0007](https://github.com/user-attachments/assets/09f6ae2a-3687-4e55-8818-9344d413b8b5)
-![IMG-20240802-WA0009](https://github.com/user-attachments/assets/a77a6876-5354-4df4-a2c9-8571b6817c5b)
-![IMG-20240802-WA0012](https://github.com/user-attachments/assets/d2e1ebac-14ff-471e-b790-2990f1e1e259)
-![IMG-20240802-WA0026](https://github.com/user-attachments/assets/37985815-ad68-4b42-99c3-2246967df89c)
- 
+
 
 
 
