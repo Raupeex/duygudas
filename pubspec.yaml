@@ -1,6 +1,6 @@
 name: bootcamp_duygudas_app
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -20,8 +20,11 @@ dependencies:
   cloud_firestore: ^5.1.0
   firebase_core: ^3.2.0
   firebase_storage: ^12.1.1
-  http: ^1.2.2
+  # http: ^0.13.6
   json_annotation: ^4.8.1
+  speech_to_text: ^6.6.0
+  permission_handler: ^11.3.1
+  dialog_flowtter: ^0.3.3
 
 
 dev_dependencies:
@@ -38,3 +41,4 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/duygudas-431314-d385b1072592.json
