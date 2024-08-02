@@ -29,7 +29,13 @@ class TestPHQ9ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PHQ-9 Test Sonucu'),
+        title: Text(
+          'PHQ-9 Test Sonucu',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
