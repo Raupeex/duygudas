@@ -25,6 +25,7 @@ class PersonalInformationPage extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: FutureBuilder<app_model.User>(
         future: userService.fetchUser(),
         builder: (context, snapshot) {
@@ -79,6 +80,10 @@ class PersonalInformationPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, '/edit_profile');
                     },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF36DCD9),
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                    ),
                     child: Text('Profil Düzenle'),
                   ),
                 ],
