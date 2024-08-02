@@ -21,7 +21,14 @@ class ProfessionalSupportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profesyonel Destek'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Profesyonel Destek',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -29,22 +36,26 @@ class ProfessionalSupportPage extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: ListView.builder(
         itemCount: psychologists.length,
         itemBuilder: (context, index) {
           final psychologist = psychologists[index];
           return Card(
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage(psychologist['image']!),
-                radius: 25, // İsteğe bağlı olarak boyut ayarlanabilir
-              ),
-              title: Text(psychologist['name']!),
-              trailing: IconButton(
-                icon: Icon(Icons.call, color: Colors.grey),
-                onPressed: () {
-                  print('WhatsApp icon clicked for ${psychologist['name']}');
-                },
+            child: Container(
+              color: Color.fromARGB(255, 196, 243, 234),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage(psychologist['image']!),
+                  radius: 25, // İsteğe bağlı olarak boyut ayarlanabilir
+                ),
+                title: Text(psychologist['name']!),
+                trailing: IconButton(
+                  icon: Icon(Icons.call, color: Colors.grey),
+                  onPressed: () {
+                    print('WhatsApp icon clicked for ${psychologist['name']}');
+                  },
+                ),
               ),
             ),
           );
@@ -65,6 +76,7 @@ class ProfessionalSupportPage extends StatelessWidget {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },

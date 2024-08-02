@@ -43,7 +43,14 @@ class _TestPHQ9PageState extends State<TestPHQ9Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PHQ-9 Testi'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'PHQ-9 Testi',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -51,10 +58,12 @@ class _TestPHQ9PageState extends State<TestPHQ9Page> {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: ListView.builder(
         itemCount: _questions.length,
         itemBuilder: (context, index) {
           return Card(
+            color: Color.fromARGB(255, 190, 248, 203),
             margin: EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,6 +111,7 @@ class _TestPHQ9PageState extends State<TestPHQ9Page> {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },
@@ -109,6 +119,7 @@ class _TestPHQ9PageState extends State<TestPHQ9Page> {
       floatingActionButton: FloatingActionButton(
         onPressed: _submitTest,
         child: Icon(Icons.check),
+        backgroundColor: Color(0xFF36DCD9),
       ),
     );
   }

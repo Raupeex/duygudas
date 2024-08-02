@@ -7,7 +7,14 @@ class TestResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test Sonuçları'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Test Sonuçlarım',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -15,6 +22,7 @@ class TestResultsPage extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: ListView.builder(
         itemCount: testResults.length,
         itemBuilder: (context, index) {
@@ -38,6 +46,7 @@ class TestResultsPage extends StatelessWidget {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },

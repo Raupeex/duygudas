@@ -5,7 +5,14 @@ class TestsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Testler'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Testler',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -13,6 +20,7 @@ class TestsPage extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -31,8 +39,18 @@ class TestsPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Text('Anksiyete (Kaygı) Testi'),
-                    Text('Yaygın Kaygı Bozukluğu 7 (GAD-7)'),
+                    Text(
+                      'Anksiyete (Kaygı) Testi',
+                      style: TextStyle(
+                        color: Color(0xFF36DCD9),
+                      ),
+                    ),
+                    Text(
+                      'Yaygın Kaygı Bozukluğu 7 (GAD-7)',
+                      style: TextStyle(
+                        color: Color(0xFF36DCD9),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -51,7 +69,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Depresyon Testi (PHQ-9)'),
+                child: Text(
+                  'Depresyon Testi (PHQ-9)',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
               ),
             ),
             Container(
@@ -68,7 +91,12 @@ class TestsPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Text('Hasta Sağlık Anketi'),
+                    Text(
+                      'Hasta Sağlık Anketi',
+                      style: TextStyle(
+                        color: Color(0xFF36DCD9),
+                      ), // Text color
+                    ),
                   ],
                 ),
               ),
@@ -85,7 +113,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Travma Sonrası Stres Bozukluğu Testi'),
+                child: Text(
+                  'Travma Sonrası Stres Bozukluğu Testi',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
               ),
             ),
             Container(
@@ -100,7 +133,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Sosyal Kaygı Testi'),
+                child: Text(
+                  'Sosyal Kaygı Testi',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
               ),
             ),
             Container(
@@ -115,7 +153,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Stres Testi DASS21'),
+                child: Text(
+                  'Stres Testi DASS21',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
               ),
             ),
             Container(
@@ -130,7 +173,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Öfke Testi'),
+                child: Text(
+                  'Öfke Testi',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ),
+                ),
               ),
             ),
             Container(
@@ -145,7 +193,12 @@ class TestsPage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Öz Güven Testi'),
+                child: Text(
+                  'Öz Güven Testi',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ),
+                ),
               ),
             ),
           ],
@@ -166,6 +219,7 @@ class TestsPage extends StatelessWidget {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },

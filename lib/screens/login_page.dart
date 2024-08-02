@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
-import '../utils/shared_preferences_util.dart'; // SharedPreferences yardımcı sınıfını ekle
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../utils/shared_preferences_util.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -12,7 +13,13 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Giriş Yap'),
+        title: const Text(
+          'Duygudaş',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 28),
+        ),
         backgroundColor: Color(0xFFF0F8FF),
       ),
       backgroundColor: Color(0xFFF0F8FF),
@@ -25,7 +32,8 @@ class LoginPage extends StatelessWidget {
               controller: emailController,
               decoration: const InputDecoration(
                 labelText: 'Mail Adresi',
-                labelStyle: TextStyle(color: Colors.black),
+                labelStyle:
+                    TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                 filled: true,
                 fillColor: Color(0xFFFFFFFF),
                 border: OutlineInputBorder(),
@@ -41,7 +49,8 @@ class LoginPage extends StatelessWidget {
               controller: passwordController,
               decoration: const InputDecoration(
                 labelText: 'Şifre',
-                labelStyle: TextStyle(color: Colors.black),
+                labelStyle:
+                    TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                 filled: true,
                 fillColor: Color(0xFFFFFFFF),
                 border: OutlineInputBorder(),
@@ -93,7 +102,7 @@ class LoginPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF36DCD9),
-                foregroundColor: Colors.black,
+                foregroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 90, vertical: 15),
               ),

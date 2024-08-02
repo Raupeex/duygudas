@@ -1,23 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'screens/login_register.dart';
-import 'screens/login_page.dart';
-import 'screens/register_page.dart';
-import 'screens/splash_screen.dart';
+
+import 'firebase_options.dart';
+import 'screens/add_diary.dart';
 import 'screens/autogenetic.dart';
 import 'screens/breathing_exercises.dart';
+import 'screens/calendar_page.dart';
+import 'screens/chat_page.dart';
+import 'screens/diary_days_list.dart';
 import 'screens/edit_profile.dart';
 import 'screens/exercises.dart';
 import 'screens/forgotten_password.dart';
 import 'screens/four_four_four_breath.dart';
+import 'screens/login_page.dart';
+import 'screens/login_register.dart';
 import 'screens/main_page.dart';
 import 'screens/personal_information.dart';
 import 'screens/professional_support.dart';
+import 'screens/register_page.dart';
 import 'screens/relaxation_exercises.dart';
+import 'screens/splash_screen.dart';
 import 'screens/test_phq9.dart';
 import 'screens/test_results.dart';
 import 'screens/tests.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +58,10 @@ class MyApp extends StatelessWidget {
         '/personal_information': (context) => PersonalInformationPage(),
         '/edit_profile': (context) => EditProfilePage(),
         '/forgotten_password': (context) => ForgottenPasswordPage(),
+        '/chat': (context) => ChatPage(),
+        '/diary': (context) => DiaryDaysList(),
+        '/calendar': (context) => CalendarPage(),
+        '/add_diary': (context) => AddDiaryPage(),
       },
     );
   }

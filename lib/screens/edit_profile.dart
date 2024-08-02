@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../utils/shared_preferences_util.dart';
 
@@ -162,7 +162,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil Düzenle'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Profil Düzenle',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -170,6 +177,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
@@ -244,6 +252,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _saveProfile,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF36DCD9),
+                foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+              ),
               child: Text('Kaydet'),
             ),
           ],

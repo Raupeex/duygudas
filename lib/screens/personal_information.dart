@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../models/user.dart' as app_model;
 import '../services/user_service.dart';
 
@@ -9,7 +10,14 @@ class PersonalInformationPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kişisel Bilgilerim'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Kişisel Bilgilerim',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -34,8 +42,8 @@ class PersonalInformationPage extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage(user
-                        .avatar), // Kullanıcı avatarı Firestore'dan veya sabit bir değerden alınıyor
+                    backgroundImage:
+                        AssetImage(user.avatar), // Kullanıcı avatarı
                   ),
                   SizedBox(height: 20),
                   Text(
@@ -94,6 +102,7 @@ class PersonalInformationPage extends StatelessWidget {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },

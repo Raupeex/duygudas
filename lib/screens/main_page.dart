@@ -57,8 +57,7 @@ class _MainPageState extends State<MainPage> {
                   await _saveAvatar(avatarPaths[index]);
                 },
                 child: Padding(
-                  padding:
-                      const EdgeInsets.all(16.0), // Padding değerini artırdık
+                  padding: const EdgeInsets.all(16.0),
                   child: Image.asset(avatarPaths[index]),
                 ),
               );
@@ -69,11 +68,28 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    // Sayfalar henüz oluşturulmadı, burası boş bırakılabilir
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF0F8FF),
       appBar: AppBar(
-        title: Text('Ana Sayfa'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: const Text(
+          'Duygudaş',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 28),
+        ),
         leading: PopupMenuButton<String>(
           icon: CircleAvatar(
             backgroundImage: AssetImage(userAvatar),
@@ -91,21 +107,53 @@ class _MainPageState extends State<MainPage> {
             }
           },
           itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Avatarı Değiştir',
-              child: Text('Avatarı Değiştir'),
+              child: Container(
+                color: Colors.blueGrey[50], // Background color
+                child: Text(
+                  'Avatarı Değiştir',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
+              ),
             ),
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Test Sonuçlarım',
-              child: Text('Test Sonuçlarım'),
+              child: Container(
+                color: Colors.blueGrey[50], // Background color
+                child: Text(
+                  'Test Sonuçlarım',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
+              ),
             ),
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Profilimi Düzenle',
-              child: Text('Profilimi Düzenle'),
+              child: Container(
+                color: Colors.blueGrey[50], // Background color
+                child: Text(
+                  'Profilimi Düzenle',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
+              ),
             ),
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Hesabı Kapat',
-              child: Text('Hesabı Kapat'),
+              child: Container(
+                color: Colors.blueGrey[50], // Background color
+                child: Text(
+                  'Hesabı Kapat',
+                  style: TextStyle(
+                    color: Color(0xFF36DCD9),
+                  ), // Text color
+                ),
+              ),
             ),
           ],
         ),
@@ -130,7 +178,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Nefes Egzersizleri'),
+                child: Text(
+                  'Nefes Egzersizleri',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
             Container(
@@ -146,7 +201,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Gevşeme Egzersizleri'),
+                child: Text(
+                  'Gevşeme Egzersizleri',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
             Container(
@@ -162,7 +224,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Testler'),
+                child: Text(
+                  'Testler',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
             Container(
@@ -178,7 +247,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Profesyonel destek al'),
+                child: Text(
+                  'Profesyonel Destek',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
             Container(
@@ -195,7 +271,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Çıkış'),
+                child: Text(
+                  'Çıkış',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
             Container(
@@ -211,7 +294,14 @@ class _MainPageState extends State<MainPage> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: Text('Kişisel Bilgilerim'),
+                child: Text(
+                  'Kişisel Bilgilerim',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF36DCD9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
               ),
             ),
           ],
@@ -232,9 +322,8 @@ class _MainPageState extends State<MainPage> {
             label: 'Takvim',
           ),
         ],
-        onTap: (int index) {
-          // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
-        },
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

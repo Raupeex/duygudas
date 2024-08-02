@@ -5,7 +5,14 @@ class RelaxationExercisesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gevşeme Egzersizleri'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          'Gevşeme Egzersizleri',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -13,6 +20,7 @@ class RelaxationExercisesPage extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -71,6 +79,7 @@ class RelaxationExercisesPage extends StatelessWidget {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },
@@ -93,7 +102,7 @@ class RelaxationExercisesPage extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 189, 150, 207),
+              color: Color(0xFF36DCD9),
               borderRadius: BorderRadius.circular(50),
             ),
             child: ElevatedButton(

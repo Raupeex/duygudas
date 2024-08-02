@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class ForgottenPasswordPage extends StatefulWidget {
   @override
@@ -52,6 +52,7 @@ class _ForgottenPasswordPageState extends State<ForgottenPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFFF0F8FF),
         title: Text('Şifreyi Sıfırla'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -60,6 +61,7 @@ class _ForgottenPasswordPageState extends State<ForgottenPasswordPage> {
           },
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -75,6 +77,10 @@ class _ForgottenPasswordPageState extends State<ForgottenPasswordPage> {
                 ? CircularProgressIndicator()
                 : ElevatedButton(
                     onPressed: _resetPassword,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF36DCD9),
+                      foregroundColor: Colors.black,
+                    ),
                     child: Text('Şifreyi Sıfırla'),
                   ),
           ],

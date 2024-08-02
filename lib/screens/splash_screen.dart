@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFF0F8FF),
       body: Center(
         child: ScaleTransition(
           scale: _animation!,

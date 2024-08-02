@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import '../screens/login_page.dart';
-import '../screens/register_page.dart';
 
 class LoginRegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hoşgeldiniz'),
+        title: Center(
+            child: const Text(
+          'Duygudaş',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 28),
+        )),
         backgroundColor: Color(0xFFF0F8FF),
       ),
       backgroundColor: Color(0xFFF0F8FF),
@@ -30,7 +35,7 @@ class LoginRegisterPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF36DCD9),
-                foregroundColor: Colors.black,
+                foregroundColor: const Color.fromARGB(255, 255, 255, 255),
               ),
               child: const Text('Giriş Yap'),
             ),
@@ -41,7 +46,7 @@ class LoginRegisterPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF8AFAA4),
-                foregroundColor: Colors.black,
+                foregroundColor: Color.fromARGB(255, 255, 255, 255),
               ),
               child: const Text('Kayıt Ol'),
             ),

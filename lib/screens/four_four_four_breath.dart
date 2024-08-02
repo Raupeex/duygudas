@@ -88,13 +88,21 @@ class _FourFourFourBreathPageState extends State<FourFourFourBreathPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('4X4X4 Nefes Egzersizi'),
+        backgroundColor: Color(0xFFF0F8FF),
+        title: Text(
+          '4X4X4 Nefes Egzersizi',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 22),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed:
               _onBackPressed, // Geri düğmesine tıklanınca çalışacak fonksiyon
         ),
       ),
+      backgroundColor: Color(0xFFF0F8FF),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -111,6 +119,10 @@ class _FourFourFourBreathPageState extends State<FourFourFourBreathPage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _toggleTimer,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF36DCD9),
+                foregroundColor: Color.fromARGB(255, 255, 255, 255),
+              ),
               child: Text(_displayText),
             ),
           ],
@@ -131,6 +143,7 @@ class _FourFourFourBreathPageState extends State<FourFourFourBreathPage> {
             label: 'Takvim',
           ),
         ],
+        selectedItemColor: Color.fromARGB(255, 113, 113, 113),
         onTap: (int index) {
           // Henüz sayfalar oluşturulmadı, fonksiyonlar boş kalacak
         },

@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -22,7 +22,13 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kayıt Ol'),
+        title: const Text(
+          'Duygudaş',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF50E5CA),
+              fontSize: 28),
+        ),
         backgroundColor: Color(0xFFF0F8FF),
       ),
       backgroundColor: Color(0xFFF0F8FF),
@@ -36,6 +42,8 @@ class RegisterPage extends StatelessWidget {
                 controller: nameController,
                 decoration: const InputDecoration(
                   labelText: 'Ad',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -48,6 +56,8 @@ class RegisterPage extends StatelessWidget {
                 controller: surnameController,
                 decoration: const InputDecoration(
                   labelText: 'Soyad',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -60,6 +70,8 @@ class RegisterPage extends StatelessWidget {
                 controller: nicknameController,
                 decoration: const InputDecoration(
                   labelText: 'Rumuz',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -72,6 +84,8 @@ class RegisterPage extends StatelessWidget {
                 controller: tcController,
                 decoration: const InputDecoration(
                   labelText: 'TC Kimlik Numarası',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -85,6 +99,8 @@ class RegisterPage extends StatelessWidget {
                 controller: dobController,
                 decoration: const InputDecoration(
                   labelText: 'Doğum Tarihi (DD/MM/YYYY)',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -121,6 +137,8 @@ class RegisterPage extends StatelessWidget {
                 controller: phoneController,
                 decoration: const InputDecoration(
                   labelText: 'Telefon (05...)',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -142,6 +160,8 @@ class RegisterPage extends StatelessWidget {
                 controller: emailController,
                 decoration: const InputDecoration(
                   labelText: 'Mail Adresi',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -155,6 +175,8 @@ class RegisterPage extends StatelessWidget {
                 controller: diagnosisController,
                 decoration: const InputDecoration(
                   labelText: 'Psikolojik Rahatsızlık Tanıları',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -167,6 +189,8 @@ class RegisterPage extends StatelessWidget {
                 controller: medicationController,
                 decoration: const InputDecoration(
                   labelText: 'Kullanılan Psikiyatri İlaçları',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -180,6 +204,8 @@ class RegisterPage extends StatelessWidget {
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'Şifre',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 203, 203, 203)),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
                   enabledBorder: OutlineInputBorder(
@@ -315,7 +341,7 @@ class RegisterPage extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF8AFAA4),
-                  foregroundColor: Colors.black,
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 90, vertical: 15),
                 ),
