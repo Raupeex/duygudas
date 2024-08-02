@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../bottom_nav_bar.dart';
+import 'calendar_page.dart';
+import 'chat_page.dart';
+import 'diary_days_list.dart';
+
+// Global avatar paths
+const List<String> avatarPaths = [
+  'assets/images/bear.png',
+  'assets/images/cat.png',
+  'assets/images/chicken.png',
+  'assets/images/dog.png',
+  'assets/images/fox.png',
+  'assets/images/meerkat.png',
+  'assets/images/panda.png',
+];
+
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
+  int _selectedIndex = 0;
   String userAvatar = 'assets/images/fox.png';
-
-  static const List<String> avatarPaths = [
-    'assets/images/bear.png',
-    'assets/images/cat.png',
-    'assets/images/chicken.png',
-    'assets/images/dog.png',
-    'assets/images/fox.png',
-    'assets/images/meerkat.png',
-    'assets/images/panda.png',
-  ];
 
   @override
   void initState() {
@@ -40,6 +47,32 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    switch (index) {
+      case 0:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => ChatPage()),
+        );
+        break;
+      case 1:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => DiaryDaysList()),
+        );
+        break;
+      case 2:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => CalendarPage()),
+        );
+        break;
+    }
+  }
+
   void _showAvatarOptions(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -48,8 +81,8 @@ class _MainPageState extends State<MainPage> {
           height: 200,
           child: GridView.builder(
             itemCount: avatarPaths.length,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3),
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () async {
@@ -66,15 +99,6 @@ class _MainPageState extends State<MainPage> {
         );
       },
     );
-  }
-
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    // Sayfalar henüz oluşturulmadı, burası boş bırakılabilir
   }
 
   @override
@@ -110,48 +134,48 @@ class _MainPageState extends State<MainPage> {
             PopupMenuItem<String>(
               value: 'Avatarı Değiştir',
               child: Container(
-                color: Colors.blueGrey[50], // Background color
+                color: Colors.blueGrey[50],
                 child: Text(
                   'Avatarı Değiştir',
                   style: TextStyle(
                     color: Color(0xFF36DCD9),
-                  ), // Text color
+                  ),
                 ),
               ),
             ),
             PopupMenuItem<String>(
               value: 'Test Sonuçlarım',
               child: Container(
-                color: Colors.blueGrey[50], // Background color
+                color: Colors.blueGrey[50],
                 child: Text(
                   'Test Sonuçlarım',
                   style: TextStyle(
                     color: Color(0xFF36DCD9),
-                  ), // Text color
+                  ),
                 ),
               ),
             ),
             PopupMenuItem<String>(
               value: 'Profilimi Düzenle',
               child: Container(
-                color: Colors.blueGrey[50], // Background color
+                color: Colors.blueGrey[50],
                 child: Text(
                   'Profilimi Düzenle',
                   style: TextStyle(
                     color: Color(0xFF36DCD9),
-                  ), // Text color
+                  ),
                 ),
               ),
             ),
             PopupMenuItem<String>(
               value: 'Hesabı Kapat',
               child: Container(
-                color: Colors.blueGrey[50], // Background color
+                color: Colors.blueGrey[50],
                 child: Text(
                   'Hesabı Kapat',
                   style: TextStyle(
                     color: Color(0xFF36DCD9),
-                  ), // Text color
+                  ),
                 ),
               ),
             ),
@@ -307,23 +331,9 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Sohbet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Günlük',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Takvim',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+      bottomNavigationBar: BottomNavBar(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
       ),
     );
   }
