@@ -150,7 +150,7 @@ https://github.com/user-attachments/assets/0c2ceabd-18c2-491b-866b-4b6c96534ea6
 Bu sprintte, Duygudaş uygulaması için misafir kullanıcı deneyimini geliştirmeye ve kullanıcı yönetimi altyapısını güçlendirmeye odaklandık. Ayrıca, sohbet botu ve sesli komut gibi yeni özellikler ekleyerek kullanıcı etkileşimini artırdık.
 - **Sprint içi puan değerlendirmesi:** 150 Puan
 - **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. Üçüncü sprint'in 150 puan olması kararlaştırıldı ve tamamlandı.
-- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. >[WhatsApp-3.docx](https://github.com/user-attachments/files/16472949/WhatsApp-3.docx)
+- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. >[WhatsApp](https://github.com/user-attachments/files/16472949/WhatsApp-3.docx)
 
  <details>
 <summary><h2>Sprint Board Screenshotları</h2></summary> 
